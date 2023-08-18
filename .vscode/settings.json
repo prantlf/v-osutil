@@ -1,0 +1,10 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/*_test": true,
+    "**/*.dSYM": true,
+    "**/test_tools/stderr": true,
+    "**/test_tools/stdout": true
+  }
+}

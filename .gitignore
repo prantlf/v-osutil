@@ -1,0 +1,5 @@
+.DS_Store
+*_test
+*.dSYM
+test_tools/stderr
+test_tools/stdout
