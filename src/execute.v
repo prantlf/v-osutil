@@ -16,7 +16,7 @@ const d = new_debug('osutil')
 pub struct ExecuteOpts {
 	trim_leading_whitespace  bool
 	trim_trailing_whitespace bool
-	trim_leading_line_break  bool = false
+	trim_leading_line_break  bool
 	trim_trailing_line_break bool = true
 }
 
