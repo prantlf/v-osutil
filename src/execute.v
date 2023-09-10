@@ -16,6 +16,7 @@ const d = new_debug('osutil')
 pub struct ExecuteOpts {
 	trim_leading_whitespace  bool
 	trim_trailing_whitespace bool
+	trim_leading_line_break  bool = false
 	trim_trailing_line_break bool = true
 }
 
@@ -92,18 +93,29 @@ fn read_all(fd int, opts &ExecuteOpts) string {
 		}
 	} else if opts.trim_trailing_whitespace {
 		str_without_trailing_whitespace(mut res)
-	} else if opts.trim_trailing_line_break {
-		mut end := res.len
-		if res[end - 1] == `\n` {
-			end--
-			if res[end - 1] == `\r` {
-				end--
-			}
-			str_within(mut res, 0, end)
-		} else {
-			res.str()
-		}
 	} else {
-		res.str()
+		mut start := 0
+		mut end := res.len
+		if opts.trim_leading_line_break {
+			if start < end && res[start] == `\r` {
+				start++
+				if start < end && res[start] == `\n` {
+					start++
+				}
+			}
+		}
+		if opts.trim_trailing_line_break {
+			if end > 0 && res[end - 1] == `\n` {
+				end--
+				if end > 0 && res[end - 1] == `\r` {
+					end--
+				}
+			}
+		}
+		if start == 0 && end == res.len {
+			res.str()
+		} else {
+			str_within(mut res, start, end)
+		}
 	}
 }
