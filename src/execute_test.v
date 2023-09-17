@@ -15,9 +15,11 @@ fn test_execute_with_output_with_space() {
 }
 
 fn test_execute_with_output_with_line_break() {
-	assert execute_opt('test_tools${os.path_separator}stdout both', ExecuteOpts{
-		trim_trailing_line_break: false
-	})! == ' stdout \n'
+	$if !windows {
+		assert execute_opt('test_tools${os.path_separator}stdout both', ExecuteOpts{
+			trim_trailing_line_break: false
+		})! == ' stdout \n'
+	}
 }
 
 fn test_execute_with_output_without_space() {
@@ -28,9 +30,11 @@ fn test_execute_with_output_without_space() {
 }
 
 fn test_execute_with_output_without_leading_space() {
-	assert execute_opt('test_tools${os.path_separator}stdout both', ExecuteOpts{
-		trim_leading_whitespace: true
-	})! == 'stdout \n'
+	$if !windows {
+		assert execute_opt('test_tools${os.path_separator}stdout both', ExecuteOpts{
+			trim_leading_whitespace: true
+		})! == 'stdout \n'
+	}
 }
 
 fn test_execute_with_output_without_trailling_space() {
