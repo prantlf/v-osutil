@@ -5,9 +5,9 @@ check:
 	v vet .
 
 test:
-	v test_tools/stderr.v
-	v test_tools/stdout.v
-	v test .
+	v -use-os-system-to-run test_tools/stderr.v
+	v -use-os-system-to-run test_tools/stdout.v
+	v -use-os-system-to-run test .
 
 clean:
 	rm -rf src/*_test src/*.dSYM test_tools/stderr test_tools/stdout
