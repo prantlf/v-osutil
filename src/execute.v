@@ -65,7 +65,7 @@ fn vpclose(f voidptr) int {
 	}
 }
 
-[manualfree]
+@[manualfree]
 fn read_all(fd int, opts &ExecuteOpts) string {
 	mut res := new_builder(1024)
 	defer {
