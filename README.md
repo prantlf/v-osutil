@@ -29,6 +29,12 @@ The following types and functions are exported:
     execute(cmd string) !string
     execute_opt(cmd string, opts &ExecuteOpts) !string
 
+    exist_in(names []string, dir string) ?string
+    find_file(name string) ?(string, string)
+    find_file_opt(name string, start_dir string, depth int) ?(string, string)
+    find_files(names []string) ?(string, string)
+    find_files_opt(names []string, start_dir string, depth int) ?(string, string)
+
 ## Contributing
 
 In lieu of a formal styleguide, take care to maintain the existing coding style. Lint and test your code.

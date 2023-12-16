@@ -1,7 +1,7 @@
 module osutil
 
 import os
-import strings { new_builder }
+import strings { Builder, new_builder }
 import prantlf.debug { new_debug }
 import prantlf.strutil {
 	first_line,
@@ -85,6 +85,10 @@ fn read_all(fd int, opts &ExecuteOpts) string {
 	if res.len == 0 {
 		return ''
 	}
+	return trim_output(mut res, opts)
+}
+
+fn trim_output(mut res Builder, opts &ExecuteOpts) string {
 	return if opts.trim_leading_whitespace {
 		if opts.trim_trailing_whitespace {
 			str_without_whitespace(mut res)
