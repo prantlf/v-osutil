@@ -1,5 +1,11 @@
 # Changes
 
+## [0.2.0](https://github.com/prantlf/v-osutil/compare/v0.1.1...v0.2.0) (2023-12-16)
+
+### Features
+
+* Add functions exist_in, find_file and find_files ([54418f2](https://github.com/prantlf/v-osutil/commit/54418f2dd61740bb6a86284bcb4befa41949ed0c))
+
 ## [0.1.1](https://github.com/prantlf/v-osutil/compare/v0.1.0...v0.1.1) (2023-12-11)
 
 ### Bug Fixes
