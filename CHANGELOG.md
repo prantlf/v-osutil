@@ -1,5 +1,11 @@
 # Changes
 
+## [0.2.1](https://github.com/prantlf/v-osutil/compare/v0.2.0...v0.2.1) (2024-04-17)
+
+### Bug Fixes
+
+* Declare fields in ExecuteOpts as public ([6114a5a](https://github.com/prantlf/v-osutil/commit/6114a5a995cc9ca27f0548bef2d39079f0311824))
+
 ## [0.2.0](https://github.com/prantlf/v-osutil/compare/v0.1.1...v0.2.0) (2023-12-16)
 
 ### Features
