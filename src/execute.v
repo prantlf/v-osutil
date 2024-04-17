@@ -14,6 +14,7 @@ import prantlf.strutil {
 const d = new_debug('osutil')
 
 pub struct ExecuteOpts {
+pub:
 	trim_leading_whitespace  bool
 	trim_trailing_whitespace bool
 	trim_leading_line_break  bool
