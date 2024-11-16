@@ -1,5 +1,11 @@
 # Changes
 
+## [0.2.2](https://github.com/prantlf/v-osutil/compare/v0.2.1...v0.2.2) (2024-11-16)
+
+### Bug Fixes
+
+* Fix sources for the new V compiler ([37a51be](https://github.com/prantlf/v-osutil/commit/37a51bea0ca5cee675586ec740b7c7f7c64425e9))
+
 ## [0.2.1](https://github.com/prantlf/v-osutil/compare/v0.2.0...v0.2.1) (2024-04-17)
 
 ### Bug Fixes
