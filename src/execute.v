@@ -26,7 +26,7 @@ pub fn execute(cmd string) !string {
 }
 
 pub fn execute_opt(cmd string, opts &ExecuteOpts) !string {
-	osutil.d.log('execute "%s"', cmd)
+	d.log('execute "%s"', cmd)
 	f := vpopen(cmd)
 	if isnil(f) {
 		return error('executing "${cmd}" failed')
@@ -37,7 +37,7 @@ pub fn execute_opt(cmd string, opts &ExecuteOpts) !string {
 	if exit_code != 0 {
 		return error('"${cmd}"" exited with ${exit_code}: ${first_line(out)}')
 	}
-	osutil.d.log('received %d bytes', out.len)
+	d.log('received %d bytes', out.len)
 	return out
 }
 

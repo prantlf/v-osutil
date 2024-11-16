@@ -24,7 +24,7 @@ fn test_execute_with_output_with_line_break() {
 
 fn test_execute_with_output_without_space() {
 	assert execute_opt('test_tools${os.path_separator}stdout both', ExecuteOpts{
-		trim_leading_whitespace: true
+		trim_leading_whitespace:  true
 		trim_trailing_whitespace: true
 	})! == 'stdout'
 }
